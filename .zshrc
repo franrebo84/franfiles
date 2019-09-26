@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color" 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/fran/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +70,15 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+git
+docker
+kubectl
+history
+zsh-autosuggestions
+command-time
+fast-syntax-highlighting
+) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,14 +105,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias ls='ls -N --color'
+alias ll='ls -lN --color'
+alias k='kubectl'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 POWERLEVEL9K_MODE='nerdfont-complete'
 export TERM="xterm-256color" 
 
-if [ -z "$TMUX" ]; then
-    tmux new -s default
-fi
+#if [ -z "$TMUX" ]; then
+#    tmux new -s default
+#fi
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
@@ -115,3 +126,5 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
