@@ -3,6 +3,7 @@
 export TERM="xterm-256color" 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+#export ZSH="/home/fran/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +78,7 @@ kubectl
 history
 zsh-autosuggestions
 command-time
-fast-syntax-highlighting
+#fast-syntax-highlighting
 ) 
 
 source $ZSH/oh-my-zsh.sh
